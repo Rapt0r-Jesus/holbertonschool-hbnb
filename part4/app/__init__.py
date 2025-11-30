@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 import config
+from flask_cors import CORS
 
 bcrypt = Bcrypt()
 jwt = JWTManager()
@@ -21,6 +22,24 @@ def create_app(config_class=config.DevelopmentConfig):
     app = Flask(__name__)
         
     app.config.from_object(config_class)
+    
+     # ========================================
+    # CONFIGURATION CORS
+    # ========================================
+    # Permet au frontend (port 5500) d'appeler l'API (port 5000)
+    CORS(app, resources={
+        r"/api/*": {
+            "origins": [
+                "http://localhost:5500",
+                "http://127.0.0.1:5500",
+                "http://localhost:5501",
+            ],
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization"],
+            "expose_headers": ["Authorization"],
+            "supports_credentials": True
+        }
+    })
     
     # Initialisation des extensions
     bcrypt.init_app(app)
