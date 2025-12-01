@@ -21,26 +21,31 @@
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
-
-            <a href="login.html" class="login-button">Login</a>
         </div>
     </header>
+
     <main>
-        <!-- Add something to idfentify the place you're reviewing -->
-        <form id="review-form">
+        <!-- Review Form -->
+        <section id="add-review">
             <h2>Add a Review</h2>
-            <label for="review">Your Review:</label>
-            <textarea id="review" name="review" required></textarea>
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating" required>
-                <!-- Options for rating -->
-            </select>
-            <button type="submit">Submit Review</button>
-        </form>
+            <form id="review-form">
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" required></textarea>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <!-- Options will be populated dynamically by scripts.js -->
+                </select>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
     </main>
+
     <footer>
         <p>© 2025 All rights reserved.</p>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 
