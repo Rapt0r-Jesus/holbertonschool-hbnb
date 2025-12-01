@@ -38,6 +38,18 @@ Cette partie du projet se concentre sur le **développement front-end** de l'app
 - Implémenter la fonctionnalité de connexion via l'API back-end.
 - Stocker le **token JWT** retourné par l'API dans un cookie pour la gestion de session.
 
+Indication pour Login :
+
+    - Start Venv : source venv/bin/activate
+    - Start front & back : python3 run.py puis click " Go Live " et rejoindre l'adresse du site
+    - Sur le site click "Login" et utiliser les test suivant : 
+        - "email": "test@hbnb.com" "password": "Test1234!"
+        ou
+        - "email": "admin@hbnb.com" "password": "Admin1234!",
+    Vous serez enfin connecter et rediriger vers l'index
+
+    Afin de se deconnecter simplement appuyer sur "Logout"
+
 ### 3. Liste des lieux
 
 - Afficher la liste de tous les lieux sur la page principale.
@@ -55,7 +67,9 @@ Cette partie du projet se concentre sur le **développement front-end** de l'app
 - Implémenter le formulaire pour ajouter un avis sur un lieu.
 - Restreindre l'accès aux utilisateurs authentifiés et rediriger les autres vers la page d’accueil.
 
+Afin d'ajouter un avis il est necessaire de choisir une Place et de cliquer sur "More detail" une fois sur la page detail du lieu une rubrique avec ecrit "Review" s'afiche en dessous du detail du lieu ainsi que des autres commentaire
 
+Il suffit alors simplement d'ecrire une review ainsi qu'atribuer une note de 0 a 5 etoile au lieu et d'appuyer sur envoi
 ---
 
 ## Technologies utilisées
